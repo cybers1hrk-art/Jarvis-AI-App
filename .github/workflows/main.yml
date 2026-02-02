@@ -1,19 +1,19 @@
 name: Build APK
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Build with Buildozer
-        uses: kivy/buildozer-action@v1
+        uses: kivy/buildozer-action@v1.5.0
         with:
           buildozer_version: master
           buildozer_command: buildozer android debug
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jarvis-app
           path: bin/*.apk
