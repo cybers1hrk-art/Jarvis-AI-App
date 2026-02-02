@@ -11,7 +11,7 @@ jobs:
         with:
           buildozer_version: master
       - name: Upload APK
-          uses: actions/upload-artifact@v2
-          with:
-            name: jarvis-ai-app
-            path: bin/*.apk
+        uses: actions/upload-artifact@v2
+        with:
+          name: jarvis-ai-app
+          path: bin/*.apk
