@@ -1,17 +1,17 @@
-name: Build APK
+name: Build
 on: [push]
 jobs:
-  build:
+  apk:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build with Buildozer
+      - name: Build
         uses: ArtemSerebrenninkov/buildozer-action@v1
         id: buildozer
         with:
           buildozer_version: master
-      - name: Upload APK
+      - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: jarvis-ai-app
+          name: jarvis-app
           path: ./*.apk
